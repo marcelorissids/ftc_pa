@@ -75,52 +75,52 @@ def create_map(dataframe):
 
     folium_static(m, width=1024, height=768)
 
-    def main():
+def main():
 
-        df = process_data(raw_data_path)
+    df = process_data(raw_data_path)
 
-        st.set_page_config(page_title="Home", page_icon="📌", layout="wide")
+    st.set_page_config(page_title="Home", page_icon="📌", layout="wide")
 
-        selected_countries = create_sidebar(df)
+    selected_countries = create_sidebar(df)
 
-        st.markdown("# Zero Hunger!")
+    st.markdown("# Zero Hunger!")
 
-        st.markdown("## The Best Place to find your new favorite restaurant!")
+    st.markdown("## The Best Place to find your new favorite restaurant!")
 
-        st.markdown("### We have the following brands within our platform:")
+    st.markdown("### We have the following brands within our platform:")
 
-        restaurants, countries, cities, ratings, cuisines = st.columns(5)
+    restaurants, countries, cities, ratings, cuisines = st.columns(5)
 
-        restaurants.metric(
-            "Registered Restaurants",
-            gd.qty_restaurants(df),
-        )
+    restaurants.metric(
+        "Registered Restaurants",
+        gd.qty_restaurants(df),
+    )
 
-        countries.metric(
-            "Registered Countries",
-            gd.qty_countries(df),
-        )
+    countries.metric(
+        "Registered Countries",
+        gd.qty_countries(df),
+    )
 
-        cities.metric(
-            "Registered Cities",
-            gd.qty_cities(df),
-        )
+    cities.metric(
+        "Registered Cities",
+        gd.qty_cities(df),
+    )
 
-        ratings.metric(
-            "Reviews Made on the Platform",
-            f"{gd.qty_ratings(df):,}".replace(",", "."),
-        )
+    ratings.metric(
+        "Reviews Made on the Platform",
+        f"{gd.qty_ratings(df):,}".replace(",", "."),
+    )
 
-        cuisines.metric(
-            f"Types of Cuisine Offered",
-            f"{gd.qty_cuisines(df):,}",
-        )
+    cuisines.metric(
+        f"Types of Cuisine Offered",
+        f"{gd.qty_cuisines(df):,}",
+    )
 
-        map_df = df.loc[df["country"].isin(selected_countries), :]
+    map_df = df.loc[df["country"].isin(selected_countries), :]
 
-        create_map(map_df)
+    create_map(map_df)
 
-        return None
+    return None
 
 
 if __name__ == "__main__":
