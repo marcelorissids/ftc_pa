@@ -29,7 +29,7 @@ def create_sidebar(df):
 
     st.sidebar.markdown("### Treated Data")
 
-    processed_data = pd.read_csv("./data/processed/data.csv")
+    processed_data = pd.read_csv("../data/processed/data.csv")
 
     st.sidebar.download_button(
         label="Download",
