@@ -15,21 +15,22 @@ def create_sidebar(df):
     image_path = "./img/"
     image = Image.open(image_path + "logo.png")
 
-    col1, col2 = st.sidebar.columns([1, 4], gap="small")
-    col1.image(image, width=35)
-    col2.markdown("# Zero Hunger")
+    st.sidebar.image(image, width=120)
 
-    st.sidebar.markdown("## Filters")
+    st.sidebar.markdown('# Zero Hunger')
+    st.sidebar.markdown('## The Best Place to find your new favorite restaurant')
 
     countries = st.sidebar.multiselect(
-        "Choose the countries you want to view the restaurants",
+        "Choose the countries",
         df.loc[:, "country"].unique().tolist(),
         default=["Brazil", "England", "Qatar", "South Africa", "Canada", "Australia"],
     )
 
+    st.sidebar.markdown("""---""")    
+
     st.sidebar.markdown("### Treated Data")
 
-    processed_data = pd.read_csv("../data/processed/data.csv")
+    processed_data = pd.read_csv("./data/processed/data.csv")
 
     st.sidebar.download_button(
         label="Download",
@@ -83,10 +84,6 @@ def main():
 
     selected_countries = create_sidebar(df)
 
-    st.markdown("# Zero Hunger!")
-
-    st.markdown("## The Best Place to find your new favorite restaurant!")
-
     st.markdown("### We have the following brands within our platform:")
 
     restaurants, countries, cities, ratings, cuisines = st.columns(5)
@@ -107,7 +104,7 @@ def main():
     )
 
     ratings.metric(
-        "Reviews Made on the Platform",
+        "Reviews Made",
         f"{gd.qty_ratings(df):,}".replace(",", "."),
     )
 
@@ -115,6 +112,29 @@ def main():
         f"Types of Cuisine Offered",
         f"{gd.qty_cuisines(df):,}",
     )
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown(
+            """
+
+            ### How to use this dashboard:
+            - Cities:
+            - Countries:
+            - Cuisines:
+
+            ### Important:
+            - The price average for two, was converted to dollar, so the comparison is possible.
+            """)
+        
+    with col2:
+        st.markdown(
+            """
+            ### Ask for Help
+            - Team of Data Science 
+                - @marcelorissi
+            """)
 
     map_df = df.loc[df["country"].isin(selected_countries), :]
 
