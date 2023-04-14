@@ -4,20 +4,20 @@ import utils.cuisines_data as cdt
 
 
 def make_sidebar(df):
-    st.sidebar.markdown("## Filtros")
+    st.sidebar.markdown("## Filters")
 
     countries = st.sidebar.multiselect(
-        "Escolha os Paises que Deseja visualizar as Informações",
+        "Choose the Countries you want to view information",
         df.loc[:, "country"].unique().tolist(),
         default=["Brazil", "England", "Qatar", "South Africa", "Canada", "Australia"],
     )
 
     top_n = st.sidebar.slider(
-        "Selecione a quantidade de Restaurantes que deseja visualizar", 1, 20, 10
+        "Select the number of Restaurants you want to view", 1, 20, 10
     )
 
     cuisines = st.sidebar.multiselect(
-        "Escolha os Tipos de Culinária ",
+        "Choose Types of Cuisine",
         df.loc[:, "cuisines"].unique().tolist(),
         default=[
             "Home-made",
@@ -40,15 +40,15 @@ def main():
 
     countries, top_n, cuisines = make_sidebar(df)
 
-    st.markdown("# :knife_fork_plate: Visão Tipos de Cusinhas")
+    st.markdown("# :knife_fork_plate: View Types of Cuisines")
 
     df_restaurants = cdt.top_restaurants(countries, cuisines, top_n)
 
-    st.markdown(f"## Melhores Restaurantes dos Principais tipos Culinários")
+    st.markdown(f"## Best Restaurants of the Main Culinary Types")
 
     cdt.write_metrics()
 
-    st.markdown(f"## Top {top_n} Restaurantes")
+    st.markdown(f"## Top {top_n} Restaurants")
 
     st.dataframe(df_restaurants)
 

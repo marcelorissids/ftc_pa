@@ -152,10 +152,10 @@ def top_best_cuisines(countries, top_n):
         y="aggregate_rating",
         text="aggregate_rating",
         text_auto=".2f",
-        title=f"Top {top_n} Melhores Tipos de Culinárias",
+        title=f"Top {top_n} Best Types of Cuisine",
         labels={
-            "cuisines": "Tipo de Culinária",
-            "aggregate_rating": "Média da Avaliação Média",
+            "cuisines": "Types of Cuisine",
+            "aggregate_rating": "Average Rating",
         },
     )
 
@@ -171,7 +171,7 @@ def top_worst_cuisines(countries, top_n):
         df.loc[lines, ["aggregate_rating", "cuisines"]]
         .groupby("cuisines")
         .mean()
-        .sort_values("aggregate_rating")
+        .sort_values("aggregate_rating", ascending=True)
         .reset_index()
         .head(top_n)
     )
@@ -182,10 +182,10 @@ def top_worst_cuisines(countries, top_n):
         y="aggregate_rating",
         text="aggregate_rating",
         text_auto=".2f",
-        title=f"Top {top_n} Piores Tipos de Culinárias",
+        title=f"Top {top_n} Worst Types of Cuisine",
         labels={
-            "cuisines": "Tipo de Culinária",
-            "aggregate_rating": "Média da Avaliação Média",
+            "cuisines": "Types of Cuisine",
+            "aggregate_rating": "Average Rating",
         },
     )
 

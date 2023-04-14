@@ -4,10 +4,10 @@ import utils.cities_data as cdt
 
 
 def make_sidebar(df):
-    st.sidebar.markdown("## Filtros")
+    st.sidebar.markdown("## Filters")
 
     countries = st.sidebar.multiselect(
-        "Escolha os Paises que Deseja visualizar as Informações",
+        "Choose the countries you want to view the information",
         df.loc[:, "country"].unique().tolist(),
         default=["Brazil", "England", "Qatar", "South Africa", "Canada", "Australia"],
     )
@@ -22,7 +22,7 @@ def main():
 
     countries = make_sidebar(df)
 
-    st.markdown("# :cityscape: Visão Cidades")
+    st.markdown("# :cityscape: Cities Perspective")
 
     fig = cdt.top_cities_restaurants(countries)
 

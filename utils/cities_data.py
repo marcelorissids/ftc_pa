@@ -26,11 +26,11 @@ def top_cities_restaurants(countries):
         text="restaurant_id",
         text_auto=".2f",
         color="country",
-        title="Top 10 Cidades com mais Restaurantes na Base de Dados",
+        title="Top 10 Cities with more Restaurants in the Database",
         labels={
-            "city": "Cidade",
-            "restaurant_id": "Quantidade de Restaurantes",
-            "country": "País",
+            "city": "City",
+            "restaurant_id": "Quantity Restaurants",
+            "country": "Country",
         },
     )
 
@@ -58,11 +58,11 @@ def top_best_restaurants(countries):
         text="restaurant_id",
         text_auto=".2f",
         color="country",
-        title="Top 7 Cidades com Restaurantes com média de avaliação acima de 4",
+        title="Top 7 Cities with Restaurants - average rating above 4",
         labels={
-            "city": "Cidade",
-            "restaurant_id": "Quantidade de Restaurantes",
-            "country": "País",
+            "city": "City",
+            "restaurant_id": "Quantity Restaurants",
+            "country": "Country",
         },
     )
 
@@ -90,11 +90,11 @@ def top_worst_restaurants(countries):
         text="restaurant_id",
         text_auto=".2f",
         color="country",
-        title="Top 7 Cidades com Restaurantes com média de avaliação abaixo de 2.5",
+        title="Top 7 Cities with Restaurants - average rating below 2.5",
         labels={
-            "city": "Cidade",
-            "restaurant_id": "Quantidade de Restaurantes",
-            "country": "País",
+            "city": "City",
+            "restaurant_id": "Quantity Restaurants",
+            "country": "Country",
         },
     )
 
@@ -118,11 +118,11 @@ def most_cuisines(countries):
         y="cuisines",
         text="cuisines",
         color="country",
-        title="Top 10 Cidades mais restaurantes com tipos culinários distintos",
+        title="Top 10 Cities with more restaurants with different types of cuisine",
         labels={
-            "city": "Cidades",
-            "cuisines": "Quantidade de Tipos Culinários Únicos",
-            "country": "País",
+            "city": "City",
+            "cuisines": "Number of Unique Culinary Types",
+            "country": "Country",
         },
     )
 

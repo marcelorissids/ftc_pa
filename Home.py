@@ -82,6 +82,29 @@ def main():
 
     st.set_page_config(page_title="Home", page_icon="📌", layout="wide")
 
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown(
+            """
+
+            ### How to use this dashboard:
+            - Cities: Contains informations about restaurants across the cities around the world
+            - Countries: Contains informations about countries and cities
+            - Cuisines: Contains informations about the best cuisines types and restaurants
+
+            ### Important:
+            - The price average for two, was converted to dollar, so the comparison is possible.
+            """)
+        
+    with col2:
+        st.markdown(
+            """
+            ### Ask for Help
+            - Team of Data Science 
+                - @marcelorissi
+            """)
+
     selected_countries = create_sidebar(df)
 
     st.markdown("### We have the following brands within our platform:")
@@ -112,29 +135,6 @@ def main():
         f"Types of Cuisine Offered",
         f"{gd.qty_cuisines(df):,}",
     )
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.markdown(
-            """
-
-            ### How to use this dashboard:
-            - Cities:
-            - Countries:
-            - Cuisines:
-
-            ### Important:
-            - The price average for two, was converted to dollar, so the comparison is possible.
-            """)
-        
-    with col2:
-        st.markdown(
-            """
-            ### Ask for Help
-            - Team of Data Science 
-                - @marcelorissi
-            """)
 
     map_df = df.loc[df["country"].isin(selected_countries), :]
 

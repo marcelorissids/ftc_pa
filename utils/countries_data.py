@@ -24,10 +24,10 @@ def countries_restaurants(countries):
         x="country",
         y="restaurant_id",
         text="restaurant_id",
-        title="Quantidade de Restaurantes Registrados por País",
+        title="Number of Registered Restaurants by Country",
         labels={
-            "country": "Paises",
-            "restaurant_id": "Quantidade de Restaurantes",
+            "country": "Countries",
+            "restaurant_id": "Number of Restaurants",
         },
     )
 
@@ -50,10 +50,10 @@ def countries_cities(countries):
         x="country",
         y="city",
         text="city",
-        title="Quantidade de Cidades Registrados por País",
+        title="Number of Cities Registered by Country",
         labels={
-            "country": "Paises",
-            "city": "Quantidade de Cidades",
+            "country": "Countries",
+            "city": "Number of Cities",
         },
     )
 
@@ -77,10 +77,10 @@ def countries_mean_votes(countries):
         y="votes",
         text="votes",
         text_auto=".2f",
-        title="Média de Avaliações feitas por País",
+        title="Average Ratings by Country",
         labels={
-            "country": "Paises",
-            "votes": "Quantidade de Avaliações",
+            "country": "Countries",
+            "votes": "Number of Reviews",
         },
     )
 
@@ -93,7 +93,7 @@ def countries_average_plate(countries):
     grouped_df = (
         df.loc[df["country"].isin(countries), ["average_cost_for_two", "country"]]
         .groupby("country")
-        .mean()
+        .median()
         .sort_values("average_cost_for_two", ascending=False)
         .reset_index()
     )
@@ -104,10 +104,10 @@ def countries_average_plate(countries):
         y="average_cost_for_two",
         text="average_cost_for_two",
         text_auto=".2f",
-        title="Média de Preço de um prato para duas pessoas por País",
+        title="Average Price of a dish for two people by Country",
         labels={
-            "country": "Paises",
-            "average_cost_for_two": "Preço de prato para duas Pessoas",
+            "country": "Countries",
+            "average_cost_for_two": "Plate price for two people",
         },
     )
 
