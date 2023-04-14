@@ -28,3 +28,7 @@ Dashboard pode ser acessado através do link: [Fome Zero](https://marcelorissids
 * Gráficos e mapas interativos;
 * Multipáginas;
 * Download de base de dados tratada.
+
+__________________________________________
+
+Curso FTC: Analisando Dados com Python
