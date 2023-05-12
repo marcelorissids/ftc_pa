@@ -1,34 +1,34 @@
-# Projeto Final
+# Final project
 
-### Contexto do Problema de Negócio
+### Business Problem Context
 
-Parabéns! Você acaba de ser contratado como Cientista de Dados da empresa
-Fome Zero, e a sua principal tarefa nesse momento é ajudar o CEO Kleiton Guerra
-a identificar pontos chaves da empresa, respondendo às perguntas que ele fizer
-utilizando dados!
-A empresa Fome Zero é uma marketplace de restaurantes. Ou seja, seu core
-business é facilitar o encontro e negociações de clientes e restaurantes. Os
-restaurantes fazem o cadastro dentro da plataforma da Fome Zero, que disponibiliza
-informações como endereço, tipo de culinária servida, se possui reservas, se faz
-entregas e também uma nota de avaliação dos serviços e produtos do restaurante,
-dentre outras informações.
+Congratulations! You have just been hired as a Data Scientist at the company
+Fome Zero, and his main task at the moment is to help CEO Kleiton Guerra
+identify key points of the company, answering the questions he asks
+using data!
+The company Fome Zero is a restaurant marketplace. That is, your core
+business is to facilitate the meeting and negotiations of customers and restaurants. You
+restaurants register within the Zero Hunger platform, which makes available
+information such as address, type of cuisine served, if you have reservations, if you do
+deliveries and also an evaluation note of the restaurant's services and products,
+among other information.
 
-### O Desafio
+### The challenge
 
-O CEO Guerra também foi recém contratado e precisa entender melhor o negócio
-para conseguir tomar as melhores decisões estratégicas e alavancar ainda mais a
-Fome Zero, e para isso, ele precisa que seja feita uma análise nos dados da
-empresa e que sejam gerados dashboards, a partir dessas análises, para responder
-as perguntas que você pode encontrar no [Projeto](https://github.com/marcelorissids/ftc_pa/blob/main/projeto_final.pdf).
-
-__________________________________________
-
-Dashboard pode ser acessado através do link: [Fome Zero](https://marcelorissids-ftc-pa.streamlit.app/)
-
-* Gráficos e mapas interativos;
-* Multipáginas;
-* Download de base de dados tratada.
+CEO Guerra was also recently hired and needs to understand the business better
+to be able to make the best strategic decisions and further leverage the
+Zero Hunger, and for that, he needs an analysis of the data from the
+company and that dashboards are generated, based on these analyses, to answer
+the questions you can find in [Project](https://github.com/marcelorissids/ftc_pa/blob/main/projeto_final.pdf).
 
 __________________________________________
 
-Curso FTC: Analisando Dados com Python
+Dashboard can be accessed through the link: [Fome Zero](https://marcelorissids-ftc-pa.streamlit.app/)
+
+* Interactive charts and maps;
+* Multipages;
+* Download treated database.
+
+__________________________________________
+
+FTC Course: Analyzing Data with Python
